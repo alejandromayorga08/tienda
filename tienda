@@ -1,0 +1,94 @@
+import java.util.Scanner;
+
+
+public class Main {
+    public static void main(String[] args) {
+
+
+        Scanner teclado = new Scanner(System.in);
+
+        String nom;
+        String tel;
+        int fecha,opc = 0,cantidad = 0,total = 0,total1 = 0,total2 = 0,total3 = 0,total4 = 0,total5 = 0,cantidad1 =0,cantidad2=0,cantidad3=0,cantidad4=0,cantidad5=0;
+        int mouse= (int) 80000;
+        int tecl =(int) 320000;
+        int moni= (int) 940000;
+        int dis= (int) 230000;
+        double ram= 180000;
+
+        do {
+            System.out.println("""
+                    ** TIENDA TECNOLOGICA ** 
+                    """);
+
+            System.out.println("Ingrese porfavor su nombre: ");
+            nom = teclado.next();
+            System.out.println("Ingrese porfavor su telefono: ");
+            tel = teclado.next();
+            System.out.println("Ingrese profavor la fecha: ");
+            fecha = teclado.nextInt();
+        }while (fecha<=0);
+
+        do{
+            System.out.println("""
+                     ** TIENDA TECNOLOGICA **
+                     """);
+            System.out.println("""
+                         ** MENU DE OPCIONES **
+                    1-MOUSE----------->80.000 
+                    2-TECLADO--------->320.000 
+                    3-MONITOR--------->940.000
+                    4-DISCOS DUROS---->230.000
+                    5-RAM------------->180.000
+                    6-SALIR....
+                    """);
+            System.out.println("Ingrese el producto que desea comprar");
+            opc=teclado.nextInt();
+
+            switch (opc){
+                case 1->{
+                    System.out.println("Cuantos mouse desea comprar: ");
+                    cantidad1= teclado.nextInt();
+                    total1=mouse*cantidad1;
+                    System.out.println("Valor de su compra: "+total1);
+                }
+                case 2->{
+                    System.out.println("Cuantos teclados desea comprar: ");
+                    cantidad2= teclado.nextInt();
+                    total2=tecl*cantidad2;
+                    System.out.println("Valor de su compra: "+total2);
+                }
+                case 3->{
+                    System.out.println("Cuantos monitores desea comprar: ");
+                    cantidad3=teclado.nextInt();
+                    total3=moni*cantidad3;
+                    System.out.println("Valor de su compra: "+total3);
+                }
+                case 4->{
+                    System.out.println("Cuantos discos duros desea comprar: ");
+                    cantidad4=teclado.nextInt();
+                    total4=dis*cantidad4;
+                    System.out.println("Valor de su compra: "+total4);
+                }
+                case 5->{
+                    System.out.println("Cuantas RAM desea comprar: ");
+                    cantidad5=teclado.nextInt();
+                    total5= (int) (cantidad5*ram);
+                    System.out.println("Valor de su compra: "+total5);
+                }
+            }
+
+
+        }while(opc!=6);
+        total=total1+total2+total3+total4+total5;
+        cantidad=cantidad1+cantidad2+cantidad3+cantidad4+cantidad5;
+        System.out.println("** FACTURA **");
+        System.out.println("Nombre del cliente: "+nom);
+        System.out.println("telefono del cliente: "+tel);
+        System.out.println("Fecha: "+fecha);
+        System.out.println("Productos: "+opc);
+        System.out.println("Cantidad de productos: "+cantidad);
+        System.out.println("valor de la unidad: "+opc);
+        System.out.println("valor total: "+total);
+    }
+}
